@@ -1,0 +1,38 @@
+//color
+
+//primary
+$veryDarkBlue: hsl(233, 47%, 7%);
+$darkBlue: hsl(244, 38%, 16%);
+$softViolet: hsl(277, 64%, 61%);
+
+//neutral
+$white: hsl(0, 0%, 100%);
+$slightWhite: hsla(0, 0%, 100%, 0.75);
+$slightWhite2: hsla(0, 0%, 100%, 0.5);
+
+// font
+
+$font-1: "Inter", sans-serif;
+$font-2: "Lexend Deca", sans-serif;
+
+
+@media (min-width: 64rem){
+
+}
+//640px, 1024px, 1400px,
+$breakpoints-up: ("medium": "40em", "large" : "64em", "xlarge": "87.5em");
+
+//639px, 1023px, 1399px,
+$breakpoints-down: ("small": "39.937em", "medium": "63.9375em", "large" : "87.4375em");
+
+@mixin breakpoints-up($size){
+    @media (min-width: map-get($map: $breakpoints-up, $key: $size)){
+        @content;
+    } 
+}
+
+@mixin breakpoints-down($size){
+    @media (max-width: map-get($map: $breakpoints-down, $key: $size)){
+        @content;
+    } 
+}
